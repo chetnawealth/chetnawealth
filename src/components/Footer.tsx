@@ -98,8 +98,16 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/80">
           <p>© {currentYear} Chetna Wealth. All rights reserved.</p>
-          <p className="mt-2 text-xs">
-            SEBI Registered Investment Advisor | Investments are subject to market risks
+          <p className="mt-4 text-xs leading-relaxed max-w-4xl mx-auto">
+            SEBI Registered Investment Advisor | Registration No: [IA Number]
+          </p>
+          <p className="mt-2 text-xs leading-relaxed max-w-4xl mx-auto">
+            <strong>Risk Disclosure:</strong> Investments in securities market are subject to market risks. Read all the related documents carefully before investing. 
+            Past performance is not indicative of future returns. Please consider your specific investment requirements before choosing a fund, or designing a portfolio that suits your needs.
+          </p>
+          <p className="mt-2 text-xs leading-relaxed max-w-4xl mx-auto">
+            <strong>Disclaimer:</strong> The information provided is for general information purposes only and does not constitute professional financial advice. 
+            Chetna Wealth does not guarantee the accuracy, reliability, or completeness of any information. Please consult with a qualified financial advisor before making any investment decisions.
           </p>
         </div>
       </div>
