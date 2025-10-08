@@ -19,23 +19,23 @@ const FundManagerSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Rajesh Kumar Sharma
+                  Vishwesh Kotha
                 </h3>
                 <p className="text-lg mb-2 text-primary-foreground/90">Founder & Chief Investment Officer</p>
                 
                 <div className="space-y-4 text-primary-foreground/90 leading-relaxed">
                   <p>
-                    With over 8 years of experience in financial markets and wealth management, 
-                    Rajesh brings a unique blend of analytical expertise and client-focused approach to Chetna Wealth.
+                    <strong>Welcome!</strong><br />
+                    I am Vishwesh Kotha, founder and fund manager of Chetna Wealth. With a Master's degree in International Finance and Investments from Northumbria University (UK) and an extensive background in financial modeling, derivatives, and quantitative research, my journey has been deeply rooted in both the practical and analytical fields of modern finance. My career spans hands-on roles in investment analysis, financial advisory, and operational strategy, blending global best practices with an innovative, client-centric approach.
                   </p>
                   <p>
-                    He holds an MBA in Finance from [University Name] and is a SEBI Registered Investment Advisor. 
-                    His investment philosophy focuses on risk-adjusted returns and long-term wealth creation 
-                    through disciplined portfolio management.
+                    At Chetna Wealth, our vision is to deliver transparent, reliable, and technologically advanced solutions for wealth creation and financial growth. My proficiency in Bloomberg, Excel, Python, and quantitative tools enables us to offer clients sophisticated, evidence-driven portfolio management, algorithmic fund strategies, and bespoke advisory services.
                   </p>
                   <p>
-                    Prior to founding Chetna Wealth, he worked with leading financial institutions where 
-                    he managed diverse portfolios and developed expertise in algorithmic trading strategies.
+                    Our business is built on integrity, professionalism, and a genuine commitment to our clients' success. Whether supporting your personal wealth journey, optimizing business finance, managing risk, or pioneering algorithmic trading avenues, we are dedicated to empowering you with actionable insights and robust financial solutions.
+                  </p>
+                  <p>
+                    Thank you for considering Chetna Wealth as your trusted partner for investment, trading, and financial decision support. Together, let's turn informed decisions into enduring prosperity.
                   </p>
                 </div>
 

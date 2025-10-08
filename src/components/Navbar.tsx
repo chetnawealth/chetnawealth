@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import chetnaLogo from "@/assets/chetna-logo.png";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -10,6 +11,13 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
+            <img
+              src={chetnaLogo}
+              alt="Chetna Wealth logo"
+              className="h-8 w-auto mr-2 select-none"
+              loading="eager"
+              decoding="async"
+            />
             <span className="text-2xl font-bold text-primary">Chetna Wealth</span>
           </div>
 
@@ -24,8 +32,8 @@ const Navbar = () => {
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
-              Get Started
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
 
@@ -63,8 +71,8 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-              Get Started
+            <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
         )}

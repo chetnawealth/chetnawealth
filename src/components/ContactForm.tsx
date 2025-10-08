@@ -15,13 +15,37 @@ const ContactForm = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/chetnawealth@gmail.com",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            Name: formData.name,
+            Email: formData.email,
+            Phone: formData.phone,
+            Message: formData.message,
+            _subject: "New contact from Chetna Wealth website",
+          }),
+        }
+      );
+
+      if (!response.ok) throw new Error("Network error");
+
+      toast({
+        title: "Message sent",
+        description: "Thank you! We'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      toast({
+        title: "Failed to send",
+        description: "Please try again or email us directly.",
+      });
+    }
   };
 
   return (
@@ -61,9 +85,9 @@ const ContactForm = () => {
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
                   placeholder="john@example.com"
                   className="w-full"
+                  required
                 />
               </div>
 
@@ -88,7 +112,6 @@ const ContactForm = () => {
                 <Textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
                   placeholder="Tell us about your investment goals..."
                   className="w-full min-h-[120px]"
                 />
@@ -110,7 +133,7 @@ const ContactForm = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
-                <p className="text-muted-foreground">contact@chetnawealth.com</p>
+                <p className="text-muted-foreground">chetnawealth@gmail.com</p>
               </div>
             </Card>
 
@@ -120,7 +143,7 @@ const ContactForm = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                <p className="text-muted-foreground">+91 98765 43210</p>
+                <p className="text-muted-foreground">+91 6305443691</p>
               </div>
             </Card>
 
@@ -131,7 +154,7 @@ const ContactForm = () => {
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
                 <p className="text-muted-foreground">
-                  Mumbai, Maharashtra, India
+                  Peddapuram, Kakinada, India
                 </p>
               </div>
             </Card>
