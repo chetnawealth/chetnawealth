@@ -1,11 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Bot, LineChart } from "lucide-react";
+import { TrendingUp, Bot, LineChart, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import lottieAnimation from "@/assets/portfolio-managment-lottie.json";
 import algorithmicTradingLottie from "@/assets/algorithmic-trading-lottie.json";
 import investmentAdvisoryLottie from "@/assets/investment-advisory-lottie.json";
+
+// Investment Advisory Services list
+const investmentAdvisoryServices = [
+  "Customized Financial Planning",
+  "Retirement Planning", 
+  "Loan and Capital Management",
+  "Crypto Currency and Digital Asset Advisory",
+  "International Investing and Forex Advisory"
+];
 
 const services = [
   {
@@ -38,7 +47,14 @@ const services = [
   {
     icon: () => <Lottie animationData={investmentAdvisoryLottie} loop={true} style={{ width: 270, height: 270 }} />,
     title: "Investment Advisory Services",
-    description: "Strategic guidance from experienced advisors to help you make informed investment decisions.",
+    description: (
+      <>
+        Strategic guidance from experienced advisors to help you make informed investment decisions.
+        <br/><br/>
+      </>
+    ),
+    isAnimated: true,
+    animatedServices: investmentAdvisoryServices,
   },
 ];
 
@@ -73,7 +89,85 @@ const Typewriter = ({
   return <span>{displayed}</span>;
 };
 
+const AnimatedServiceItem = ({ 
+  service, 
+  index, 
+  isVisible 
+}: { 
+  service: string; 
+  index: number; 
+  isVisible: boolean; 
+}) => {
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        setIsAnimated(true);
+      }, index * 200); // Stagger animation by 200ms per item
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, index]);
+
+  return (
+    <div
+      className={`flex items-center space-x-3 transition-all duration-500 transform ${
+        isAnimated 
+          ? 'translate-x-0 opacity-100' 
+          : 'translate-x-4 opacity-0'
+      }`}
+    >
+      <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+      <span className="font-semibold text-card-foreground">{service}</span>
+    </div>
+  );
+};
+
+const AnimatedServiceList = ({ 
+  services, 
+  isVisible 
+}: { 
+  services: string[]; 
+  isVisible: boolean; 
+}) => {
+  return (
+    <div className="space-y-3">
+      {services.map((service, index) => (
+        <AnimatedServiceItem
+          key={index}
+          service={service}
+          index={index}
+          isVisible={isVisible}
+        />
+      ))}
+    </div>
+  );
+};
+
 const HeroSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const target = document.getElementById('services');
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
   return (
     <section id="services" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
@@ -99,7 +193,7 @@ const HeroSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="mb-4 inline-block p-3 bg-accent/10 rounded-lg shrink-0 w-fit">
-                <service.icon className="h-8 w-8 text-accent shrink-0" />
+                <service.icon />
               </div>
               <h3 className="text-xl font-semibold text-card-foreground mb-3">
                 {service.title}
@@ -107,6 +201,14 @@ const HeroSection = () => {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
+              {service.isAnimated && service.animatedServices && (
+                <div className="mb-6">
+                  <AnimatedServiceList 
+                    services={service.animatedServices} 
+                    isVisible={isVisible} 
+                  />
+                </div>
+              )}
               <Button
                 variant="outline"
                 className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto"
