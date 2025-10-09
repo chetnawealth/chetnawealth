@@ -148,26 +148,27 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+    const handleScroll = () => {
+      const target = document.getElementById('services');
+      if (target) {
+        const rect = target.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isInView && !isVisible) {
           setIsVisible(true);
         }
-      },
-      { threshold: 0.1 }
-    );
-
-    const target = document.getElementById('services');
-    if (target) {
-      observer.observe(target);
-    }
-
-    return () => {
-      if (target) {
-        observer.unobserve(target);
       }
     };
-  }, []);
+
+    // Check immediately on mount
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isVisible]);
   return (
     <section id="services" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
