@@ -14,9 +14,12 @@ const ContactForm = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     try {
       const response = await fetch(
         "https://formsubmit.co/ajax/chetnawealth@gmail.com",
@@ -45,6 +48,8 @@ const ContactForm = () => {
         title: "Failed to send",
         description: "Please try again or email us directly.",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -119,9 +124,10 @@ const ContactForm = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                disabled={isSubmitting}
+                className="w-full bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-50"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
