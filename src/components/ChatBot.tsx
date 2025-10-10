@@ -57,7 +57,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-3rem)] h-[500px] flex flex-col shadow-2xl z-50 animate-scale-in">
+        <Card className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-2rem)] h-[500px] flex flex-col shadow-2xl z-50 animate-scale-in">
           {/* Header */}
           <div className="bg-primary text-primary-foreground p-4 rounded-t-lg">
             <h3 className="font-semibold">Chat with Chetna Wealth</h3>

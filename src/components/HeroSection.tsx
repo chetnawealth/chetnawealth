@@ -45,7 +45,7 @@ const services = [
     ),
   },
   {
-    icon: () => <Lottie animationData={investmentAdvisoryLottie} loop={true} style={{ width: 270, height: 270 }} />,
+    icon: () => <Lottie animationData={investmentAdvisoryLottie} loop={true} style={{ width: '100%', height: '100%' }} />,
     title: "Investment Advisory Services",
     description: (
       <>
@@ -152,15 +152,13 @@ const HeroSection = () => {
       const target = document.getElementById('services');
       if (target) {
         const rect = target.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+        // Check if services section is in view (top of section is visible)
+        const isInView = rect.top < window.innerHeight && rect.top > -rect.height;
         if (isInView && !isVisible) {
           setIsVisible(true);
         }
       }
     };
-
-    // Check immediately on mount
-    handleScroll();
 
     // Add scroll listener
     window.addEventListener('scroll', handleScroll);
