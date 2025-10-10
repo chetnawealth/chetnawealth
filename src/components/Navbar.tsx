@@ -102,7 +102,10 @@ const Navbar = () => {
             <div className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-accent/5 transition-all duration-200">
               <span className="text-sm text-muted-foreground">Theme</span>
               <Button
-                onClick={toggleTheme}
+                onClick={() => {
+                  toggleTheme();
+                  setIsOpen(false);
+                }}
                 variant="outline"
                 size="icon"
                 className="h-9 w-9 animate-theme-toggle hover:bg-accent/10 hover:scale-110 transition-all duration-200"
@@ -112,7 +115,7 @@ const Navbar = () => {
               </Button>
             </div>
             <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
-              <a href="#contact">Get Started</a>
+              <a href="#contact" onClick={() => setIsOpen(false)}>Get Started</a>
             </Button>
           </div>
         )}
