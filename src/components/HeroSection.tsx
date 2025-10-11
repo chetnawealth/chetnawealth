@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Bot, LineChart, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import lottieAnimation from "@/assets/portfolio-managment-lottie.json";
 import algorithmicTradingLottie from "@/assets/algorithmic-trading-lottie.json";
@@ -208,12 +209,18 @@ const HeroSection = () => {
                   />
                 </div>
               )}
-              <Button
-                variant="outline"
-                className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto"
-              >
-                Explore More
-              </Button>
+              {index === 0 ? (
+                <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto">
+                  <Link to="/portfolio-management">Explore More</Link>
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto"
+                >
+                  Explore More
+                </Button>
+              )}
             </Card>
           ))}
         </div>
