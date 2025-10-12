@@ -422,7 +422,7 @@ const PortfolioManagement = () => {
                       step="1000"
                       placeholder="0"
                       onChange={(e) => setLumpsum(e.target.value)}
-                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent ios-fix"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -435,7 +435,7 @@ const PortfolioManagement = () => {
                       step="100"
                       placeholder="0"
                       onChange={(e) => setSip(e.target.value)}
-                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent ios-fix"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -449,7 +449,7 @@ const PortfolioManagement = () => {
                       step="0.1"
                       placeholder="0"
                       onChange={(e) => setRate(e.target.value)}
-                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent ios-fix"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -529,7 +529,7 @@ const PortfolioManagement = () => {
                       step="10000"
                       placeholder="0"
                       onChange={(e) => setLoanAmount(e.target.value)}
-                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent ios-fix"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -543,7 +543,7 @@ const PortfolioManagement = () => {
                       step="0.1"
                       placeholder="0"
                       onChange={(e) => setLoanRate(e.target.value)}
-                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent"
+                      className="p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent ios-fix"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -756,7 +756,7 @@ const PortfolioManagement = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     required
-                    className="w-full p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                    className="w-full p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors ios-fix"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -769,7 +769,7 @@ const PortfolioManagement = () => {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                    className="w-full p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors ios-fix"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -786,7 +786,7 @@ const PortfolioManagement = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     required
-                    className="w-full p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                    className="w-full p-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors ios-fix"
                     placeholder="Enter your phone number"
                   />
                 </div>

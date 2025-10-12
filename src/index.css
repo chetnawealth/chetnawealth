@@ -15,6 +15,26 @@
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.5rem;
+    will-change: transform;
+  }
+  
+  /* Specific fixes for iOS Safari */
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    input[type="number"],
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      font-size: 16px !important;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
   
   /* Prevent zoom on focus for iOS */
@@ -26,8 +46,33 @@
     textarea,
     select {
       font-size: 16px !important;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
     }
   }
+  
+  /* Additional fix for number inputs specifically */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+/* Additional iOS fix class */
+.ios-fix {
+  font-size: 16px !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  will-change: transform !important;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
