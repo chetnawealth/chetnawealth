@@ -40,9 +40,9 @@ const FundManagerSection = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-6">
-                  <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-sm">SEBI Registered</span>
-                  <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-sm">MBA Finance</span>
-                  <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-sm">8+ Years Experience</span>
+                  <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-sm">ROC Registered</span>
+                  <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-sm">MSC International Finance and Investments</span>
+                  <span className="px-4 py-2 bg-primary-foreground/10 rounded-full text-sm">Registered Investment Advisor</span>
                 </div>
               </div>
 
