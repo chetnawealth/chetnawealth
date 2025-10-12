@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,19 +19,19 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <a href="#services" className="hover:text-accent transition-colors">
+                <Link to="/portfolio-management" className="hover:text-accent transition-colors">
                   Portfolio Management
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-accent transition-colors">
+                <Link to="/algorithmic-trading" className="hover:text-accent transition-colors">
                   Algorithmic Trading
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-accent transition-colors">
+                <Link to="/investment-advisory" className="hover:text-accent transition-colors">
                   Investment Advisory
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

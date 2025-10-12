@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import PortfolioManagement from "./pages/PortfolioManagement";
+import InvestmentAdvisory from "./pages/InvestmentAdvisory";
+import AlgorithmicTrading from "./pages/AlgorithmicTrading";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +41,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/portfolio-management" element={<PortfolioManagement />} />
+              <Route path="/investment-advisory" element={<InvestmentAdvisory />} />
+              <Route path="/algorithmic-trading" element={<AlgorithmicTrading />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

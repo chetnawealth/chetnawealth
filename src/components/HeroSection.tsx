@@ -213,6 +213,14 @@ const HeroSection = () => {
                 <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto">
                   <Link to="/portfolio-management">Explore More</Link>
                 </Button>
+              ) : index === 1 ? (
+                <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto">
+                  <Link to="/algorithmic-trading">Explore More</Link>
+                </Button>
+              ) : index === 2 ? (
+                <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-colors mt-auto">
+                  <Link to="/investment-advisory">Explore More</Link>
+                </Button>
               ) : (
                 <Button
                   variant="outline"

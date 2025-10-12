@@ -297,7 +297,7 @@ const PortfolioManagement = () => {
             </div>
 
             {/* Right Side - Lottie Animation */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center">
               <div className="w-64 h-64 lg:w-72 lg:h-72">
                 <Lottie 
                   animationData={portfolioManagementLottie} 
