@@ -28,15 +28,15 @@ const FundManagerSection = () => {
                     <strong>Welcome!</strong><br />
                     I am Vishwesh Kotha, founder and fund manager of Chetna Wealth. With a Master's degree in International Finance and Investments from Northumbria University (UK) and an extensive background in financial modeling, derivatives, and quantitative research, my journey has been deeply rooted in both the practical and analytical fields of modern finance. My career spans hands-on roles in investment analysis, financial advisory, and operational strategy, blending global best practices with an innovative, client-centric approach.
                   </p>
-                  <p>
+                  {/* <p>
                     At Chetna Wealth, our vision is to deliver transparent, reliable, and technologically advanced solutions for wealth creation and financial growth. My proficiency in Bloomberg, Excel, Python, and quantitative tools enables us to offer clients sophisticated, evidence-driven portfolio management, algorithmic fund strategies, and bespoke advisory services.
-                  </p>
+                  </p> */}
                   <p>
                     Our business is built on integrity, professionalism, and a genuine commitment to our clients' success. Whether supporting your personal wealth journey, optimizing business finance, managing risk, or pioneering algorithmic trading avenues, we are dedicated to empowering you with actionable insights and robust financial solutions.
                   </p>
-                  <p>
+                  {/* <p>
                     Thank you for considering Chetna Wealth as your trusted partner for investment, trading, and financial decision support. Together, let's turn informed decisions into enduring prosperity.
-                  </p>
+                  </p> */}
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-6">

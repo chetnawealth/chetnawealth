@@ -50,12 +50,22 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <a 
+                  href="/src/assets/CHETNA WEALTH PRIVACY POLICY .pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <a 
+                  href="/src/assets/CHETNA WEALTH TERMS OF SERVICE .pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
                   Terms of Service
                 </a>
               </li>
