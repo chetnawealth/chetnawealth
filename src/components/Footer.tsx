@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, X, Linkedin, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -76,32 +76,49 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Connect With Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61582463046683"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/chetnawealth?s=11"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="Twitter"
+                aria-label="X"
               >
-                <Twitter className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/916305443691"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="LinkedIn"
+                aria-label="WhatsApp"
               >
-                <Linkedin className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/chetnawealth?igsh=aWF6ZGd4ZGdodXhy&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://youtube.com/@chetnawealth?si=CCfQjDkll3VXcQkx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-primary-foreground/10 rounded-full hover:bg-accent hover:text-accent-foreground transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
